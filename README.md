@@ -19,26 +19,23 @@ _Below is an example of how you can instruct your audience on installing and set
    git clone https://github.com/Durgle/OpenClassrooms_P3_Entrevoisins.git
    ```
 2. Open the project with **[Android Studio](https://developer.android.com/studio)**
-3. Start the app with this button ![run button](images/start.png)
+3. Start the app with this button ![run button](images/start.png "Run Button")
 
 <!-- EXAMPLES -->
 ## Preview
 
-<figure style="text-align:center">
-  <img src="images/list.png" alt="Neighbours List">
-  <figcaption>Screenshot of the neighbors list.</figcaption>
-</figure>
+![Neighbours List](images/list.png "Screenshot of the neighbours list.")
 
-<figure style="text-align:center">
-  <img src="images/add.png" alt="Add Neighbour">
-  <figcaption>Screenshot of the neighbor addition page.</figcaption>
-</figure>
+_Screenshot of the neighbours list._
 
-<figure style="text-align:center">
-  <img src="images/detail.png" alt="Neighbour Details">
-  <figcaption>Screenshot of the neighbor details page.</figcaption>
-</figure>
+<br>
 
+![Add Neighbour](images/list.png "Screenshot of the neighbour addition page.")
 
+_Screenshot of the neighbour addition page._
 
+<br>
 
+![Neighbour Details](images/list.png "Screenshot of the neighbour details page.")
+
+_Screenshot of the neighbour details page._
