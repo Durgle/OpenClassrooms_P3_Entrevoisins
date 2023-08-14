@@ -25,17 +25,14 @@ _Below is an example of how you can instruct your audience on installing and set
 ## Preview
 
 ![Neighbours List](images/list.png "Screenshot of the neighbours list.")
-
-_Screenshot of the neighbours list._
+> *Screenshot of the neighbours list.*
 
 <br>
 
 ![Add Neighbour](images/list.png "Screenshot of the neighbour addition page.")
-
-_Screenshot of the neighbour addition page._
+> *Screenshot of the neighbour addition page.*
 
 <br>
 
 ![Neighbour Details](images/list.png "Screenshot of the neighbour details page.")
-
-_Screenshot of the neighbour details page._
+> *Screenshot of the neighbour details page.*
