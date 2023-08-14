@@ -73,10 +73,8 @@ public class NeighbourFragment extends Fragment implements NeighbourApiService.O
 
             @Override
             public void onItemClick(int position) {
-                Intent intent = new Intent(requireContext(),NeighbourDetailActivity.class);
                 Neighbour neighbour = mNeighbours.get(position);
-                intent.putExtra(NeighbourDetailActivity.NEIGHBOUR_ID, neighbour.getId());
-                startActivity(intent);
+                NeighbourDetailActivity.startActivity(requireContext(),neighbour.getId());
             }
         });
         mRecyclerView.setAdapter(mAdapter);

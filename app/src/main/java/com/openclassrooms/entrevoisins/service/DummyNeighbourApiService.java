@@ -72,6 +72,11 @@ public class DummyNeighbourApiService implements NeighbourApiService {
     }
 
     @Override
+    public void toggleFavorite(Neighbour neighbour) {
+        neighbour.setFavorite(!neighbour.isFavorite());
+    }
+
+    @Override
     public void addObserver(Observer observer) {
         observers.add(observer);
     }
@@ -79,5 +84,10 @@ public class DummyNeighbourApiService implements NeighbourApiService {
     @Override
     public void removeObserver(Observer observer) {
         observers.remove(observer);
+    }
+
+    @Override
+    public List<Observer> getObservers() {
+        return observers;
     }
 }

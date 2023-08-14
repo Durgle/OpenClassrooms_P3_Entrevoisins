@@ -41,9 +41,17 @@ public interface NeighbourApiService {
      */
     Neighbour getNeighbour(long neighbourId);
 
+    /**
+     * Toggle favorite
+     * @param neighbour Neighbour
+     */
+    void toggleFavorite(Neighbour neighbour);
+
     void addObserver(Observer observer);
 
     void removeObserver(Observer observer);
+
+    List<Observer> getObservers();
 
     interface Observer {
         void onChange();

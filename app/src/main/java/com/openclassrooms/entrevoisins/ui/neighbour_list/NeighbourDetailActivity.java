@@ -1,5 +1,6 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,8 +27,13 @@ public class NeighbourDetailActivity extends AppCompatActivity {
     private ActivityNeighbourDetailBinding binding;
     private NeighbourApiService mApiService;
     private Neighbour mNeighbour;
+    private static final String NEIGHBOUR_ID = "neighbour_id";
 
-    public static final String NEIGHBOUR_ID = "neighbour_id";
+    public static void startActivity(Context context, long neighbourId) {
+        Intent intent = new Intent(context,NeighbourDetailActivity.class);
+        intent.putExtra(NeighbourDetailActivity.NEIGHBOUR_ID, neighbourId);
+        context.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,14 +97,13 @@ public class NeighbourDetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                mApiService.toggleFavorite(mNeighbour);
                 if(mNeighbour.isFavorite()){
-                    mNeighbour.setFavorite(false);
-                    Snackbar.make(view, R.string.removed_from_favorite, Snackbar.LENGTH_LONG).show();
-                    binding.addFavorites.clearColorFilter();
-                } else {
-                    mNeighbour.setFavorite(true);
                     Snackbar.make(view,  R.string.added_to_favorite, Snackbar.LENGTH_LONG).show();
                     binding.addFavorites.setColorFilter(ResourcesCompat.getColor(getResources(), R.color.colorYellow,null));
+                } else {
+                    Snackbar.make(view, R.string.removed_from_favorite, Snackbar.LENGTH_LONG).show();
+                    binding.addFavorites.clearColorFilter();
                 }
             }
         });
