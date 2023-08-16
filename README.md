@@ -29,10 +29,10 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <br>
 
-![Add Neighbour](images/list.png "Screenshot of the neighbour addition page.")
+![Add Neighbour](images/add.png "Screenshot of the neighbour addition page.")
 > *Screenshot of the neighbour addition page.*
 
 <br>
 
-![Neighbour Details](images/list.png "Screenshot of the neighbour details page.")
+![Neighbour Details](images/detail.png "Screenshot of the neighbour details page.")
 > *Screenshot of the neighbour details page.*
