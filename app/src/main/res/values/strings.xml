@@ -3,4 +3,11 @@
     <string name="tab_neighbour_title">My neighbours</string>
     <string name="tab_favorites_title">Favorites</string>
     <string name="activity_new_neighbour">New neighbour</string>
+    <string name="title_activity_neighbour_detail">NeighbourDetailActivity</string>
+    <string name="facebook_url">www.facebook.fr/%s</string>
+    <string name="about_me">A propos de moi</string>
+    <string name="banner_description">User avatar</string>
+    <string name="add_favorite_description">Add to favorite</string>
+    <string name="removed_from_favorite">Neighbor removed from favorites.</string>
+    <string name="added_to_favorite">Neighbor added to favorites.</string>
 </resources>

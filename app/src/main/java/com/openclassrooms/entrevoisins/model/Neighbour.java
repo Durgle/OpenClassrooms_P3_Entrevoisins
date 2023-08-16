@@ -16,7 +16,7 @@ public class Neighbour {
     /** Avatar */
     private String avatarUrl;
 
-    /** Adress */
+    /** Address */
     private String address;
 
     /** Phone number */
@@ -24,6 +24,9 @@ public class Neighbour {
 
     /** About me */
     private String aboutMe;
+
+    /** Favorite */
+    private Boolean favorite = false;
 
     /**
      * Constructor
@@ -88,6 +91,10 @@ public class Neighbour {
     public void setAboutMe(String aboutMe) {
         this.aboutMe = aboutMe;
     }
+
+    public Boolean isFavorite() { return favorite; }
+
+    public void setFavorite(Boolean favorite) { this.favorite = favorite; }
 
     @Override
     public boolean equals(Object o) {

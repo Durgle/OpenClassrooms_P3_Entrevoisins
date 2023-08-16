@@ -23,10 +23,17 @@ import butterknife.ButterKnife;
 
 public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Neighbour> mNeighbours;
+    private List<Neighbour> mNeighbours;
+    private  OnItemClickListener mListener;
 
-    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items) {
+    public interface OnItemClickListener {
+        void onDeleteClick(int position);
+        void onItemClick(int position);
+    }
+
+    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items,OnItemClickListener listener) {
         mNeighbours = items;
+        mListener = listener;
     }
 
     @Override
@@ -44,13 +51,11 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 .load(neighbour.getAvatarUrl())
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
+    }
 
-        holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
-            }
-        });
+    public void refreshList(List<Neighbour> neighbourList) {
+        mNeighbours = neighbourList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -69,6 +74,30 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         public ViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+
+            mDeleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(mListener != null){
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            mListener.onDeleteClick(position);
+                        }
+                    }
+                }
+            });
+
         }
     }
 }
