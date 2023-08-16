@@ -125,6 +125,8 @@ public class NeighboursListTest {
         onView(MatcherUtils.withIndex(withId(R.id.list_neighbours),1))
                 .check(withItemCount(1));
 
+        //onView(withRecyclerView(R.id.list_neighbours).atPositionOnView(1, R.id.username))
+       //         .check(matches(withText(DummyNeighbourGenerator.DUMMY_NEIGHBOURS.get(1).getName())));
     }
 
 
