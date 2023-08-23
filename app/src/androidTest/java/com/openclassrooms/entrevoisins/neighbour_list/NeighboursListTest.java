@@ -16,6 +16,7 @@ import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.NeighbourDetailActivity;
 import com.openclassrooms.entrevoisins.utils.DeleteViewAction;
 import com.openclassrooms.entrevoisins.utils.MatcherUtils;
+import com.openclassrooms.entrevoisins.utils.RecyclerViewItemAssertion;
 import com.openclassrooms.entrevoisins.utils.ShowNeighbourDetailsAction;
 
 import org.junit.Before;
@@ -32,7 +33,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
-import static com.openclassrooms.entrevoisins.utils.TestUtils.withRecyclerView;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.core.IsNull.notNullValue;
 
@@ -125,8 +125,14 @@ public class NeighboursListTest {
         onView(MatcherUtils.withIndex(withId(R.id.list_neighbours),1))
                 .check(withItemCount(1));
 
-        //onView(withRecyclerView(R.id.list_neighbours).atPositionOnView(1, R.id.username))
-       //         .check(matches(withText(DummyNeighbourGenerator.DUMMY_NEIGHBOURS.get(1).getName())));
+        onView(MatcherUtils.withIndex(withId(R.id.list_neighbours), 1))
+                .check(
+                        new RecyclerViewItemAssertion(
+                                0,
+                                R.id.item_list_name,
+                                withText(DummyNeighbourGenerator.DUMMY_NEIGHBOURS.get(1).getName())
+                        )
+                );
     }
 
 
